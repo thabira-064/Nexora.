@@ -1,1 +1,1108 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Nexora | Freelancing by Thabira Chandra</title>
+
+<meta name="description"
+content="Nexora - Freelancing by Thabira Chandra. Video editing, web design, social media, Excel, Tally and digital services.">
+
+<style>
+
+/* ================= RESET ================= */
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:Arial,Helvetica,sans-serif;
+  background:#070b18;
+  color:#fff;
+  overflow-x:hidden;
+}
+
+/* ================= ANIMATED BACKGROUND ================= */
+
+body::before{
+  content:"";
+  position:fixed;
+  width:500px;
+  height:500px;
+  background:#5b21b6;
+  filter:blur(150px);
+  opacity:.25;
+  top:-150px;
+  left:-150px;
+  z-index:-2;
+  border-radius:50%;
+  animation:orbOne 9s ease-in-out infinite alternate;
+}
+
+body::after{
+  content:"";
+  position:fixed;
+  width:450px;
+  height:450px;
+  background:#06b6d4;
+  filter:blur(150px);
+  opacity:.18;
+  right:-150px;
+  bottom:-100px;
+  z-index:-2;
+  border-radius:50%;
+  animation:orbTwo 11s ease-in-out infinite alternate;
+}
+
+@keyframes orbOne{
+  0%{
+    transform:translate(0,0) scale(1);
+  }
+  100%{
+    transform:translate(130px,120px) scale(1.25);
+  }
+}
+
+@keyframes orbTwo{
+  0%{
+    transform:translate(0,0) scale(1);
+  }
+  100%{
+    transform:translate(-120px,-100px) scale(1.2);
+  }
+}
+
+/* ================= NAVBAR ================= */
+
+nav{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  padding:18px 7%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  background:rgba(7,11,24,.75);
+  backdrop-filter:blur(15px);
+  border-bottom:1px solid rgba(255,255,255,.08);
+  z-index:1000;
+  animation:navDown 1s ease forwards;
+}
+
+@keyframes navDown{
+  from{
+    opacity:0;
+    transform:translateY(-40px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+.logo{
+  font-size:26px;
+  font-weight:bold;
+  letter-spacing:1px;
+  background:linear-gradient(90deg,#8b5cf6,#22d3ee,#8b5cf6);
+  background-size:200% auto;
+  -webkit-background-clip:text;
+  color:transparent;
+  animation:logoGlow 3s linear infinite;
+}
+
+@keyframes logoGlow{
+  to{
+    background-position:200% center;
+  }
+}
+
+nav ul{
+  display:flex;
+  list-style:none;
+  gap:25px;
+}
+
+nav a{
+  color:#ddd;
+  text-decoration:none;
+  font-size:14px;
+  transition:.3s;
+  position:relative;
+}
+
+nav a::after{
+  content:"";
+  position:absolute;
+  width:0;
+  height:2px;
+  left:0;
+  bottom:-6px;
+  background:#22d3ee;
+  transition:.3s;
+}
+
+nav a:hover{
+  color:#22d3ee;
+}
+
+nav a:hover::after{
+  width:100%;
+}
+
+/* ================= COMMON ================= */
+
+section{
+  min-height:100vh;
+  padding:110px 8% 70px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.container{
+  width:100%;
+  max-width:1150px;
+}
+
+.section-title{
+  text-align:center;
+  font-size:38px;
+  margin-bottom:45px;
+}
+
+.section-title span{
+  background:linear-gradient(90deg,#8b5cf6,#22d3ee,#8b5cf6);
+  background-size:200% auto;
+  -webkit-background-clip:text;
+  color:transparent;
+  animation:gradientMove 3s linear infinite;
+}
+
+@keyframes gradientMove{
+  to{
+    background-position:200% center;
+  }
+}
+
+/* ================= HOME ================= */
+
+#home{
+  text-align:center;
+}
+
+.hero{
+  position:relative;
+}
+
+/* Freelancing tag */
+
+.freelance-tag{
+  display:inline-block;
+  padding:10px 20px;
+  margin-bottom:22px;
+  border-radius:50px;
+  border:1px solid rgba(34,211,238,.35);
+  background:rgba(34,211,238,.06);
+  color:#22d3ee;
+  font-size:15px;
+  animation:
+    tagEnter 1s ease forwards,
+    tagFloat 3s ease-in-out 1.2s infinite;
+}
+
+@keyframes tagEnter{
+  from{
+    opacity:0;
+    transform:translateY(-25px) scale(.9);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0) scale(1);
+  }
+}
+
+@keyframes tagFloat{
+  0%,100%{
+    transform:translateY(0);
+  }
+  50%{
+    transform:translateY(-6px);
+  }
+}
+
+/* Animated name */
+
+.hero h1{
+  font-size:clamp(45px,8vw,85px);
+  margin-bottom:15px;
+  font-weight:800;
+}
+
+.animated-name{
+  background:linear-gradient(
+    90deg,
+    #8b5cf6,
+    #22d3ee,
+    #8b5cf6,
+    #22d3ee
+  );
+  background-size:300% auto;
+  -webkit-background-clip:text;
+  color:transparent;
+
+  animation:
+    nameEnter 1.3s ease forwards,
+    nameGradient 4s linear 1.3s infinite;
+}
+
+@keyframes nameEnter{
+  0%{
+    opacity:0;
+    transform:translateY(50px) scale(.8);
+    filter:blur(12px);
+  }
+  70%{
+    transform:translateY(-5px) scale(1.03);
+  }
+  100%{
+    opacity:1;
+    transform:translateY(0) scale(1);
+    filter:blur(0);
+  }
+}
+
+@keyframes nameGradient{
+  to{
+    background-position:300% center;
+  }
+}
+
+.hero h2{
+  font-size:24px;
+  margin-bottom:18px;
+  animation:fadeUp 1.5s ease forwards;
+  opacity:0;
+}
+
+.hero p{
+  max-width:650px;
+  margin:auto;
+  color:#b9c0d0;
+  line-height:1.7;
+  font-size:17px;
+  animation:fadeUp 1.8s ease forwards;
+  opacity:0;
+}
+
+/* ================= BUTTONS ================= */
+
+.buttons{
+  margin-top:35px;
+  display:flex;
+  justify-content:center;
+  gap:15px;
+  flex-wrap:wrap;
+  animation:fadeUp 2s ease forwards;
+  opacity:0;
+}
+
+.btn{
+  padding:14px 25px;
+  border-radius:30px;
+  text-decoration:none;
+  font-weight:bold;
+  transition:.35s;
+  display:inline-block;
+  position:relative;
+  overflow:hidden;
+}
+
+.primary{
+  background:linear-gradient(90deg,#7c3aed,#06b6d4);
+  color:white;
+  box-shadow:0 10px 30px rgba(34,211,238,.15);
+}
+
+.secondary{
+  border:1px solid #39445f;
+  color:white;
+  background:rgba(255,255,255,.03);
+}
+
+.btn:hover{
+  transform:translateY(-6px) scale(1.04);
+  box-shadow:0 12px 35px rgba(34,211,238,.25);
+}
+
+.btn::before{
+  content:"";
+  position:absolute;
+  top:0;
+  left:-100%;
+  width:50%;
+  height:100%;
+  background:rgba(255,255,255,.2);
+  transform:skewX(-25deg);
+  transition:.5s;
+}
+
+.btn:hover::before{
+  left:130%;
+}
+
+/* ================= SERVICES ================= */
+
+.cards{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+}
+
+.card{
+  padding:30px;
+  border-radius:20px;
+  background:rgba(255,255,255,.045);
+  border:1px solid rgba(255,255,255,.09);
+  backdrop-filter:blur(10px);
+
+  opacity:0;
+  transform:translateY(50px);
+
+  transition:
+    transform .5s ease,
+    border-color .4s,
+    box-shadow .4s;
+}
+
+.card.show{
+  opacity:1;
+  transform:translateY(0);
+}
+
+.card:hover{
+  transform:translateY(-12px) scale(1.02);
+  border-color:#22d3ee;
+  box-shadow:0 15px 45px rgba(0,0,0,.25);
+}
+
+.icon{
+  font-size:38px;
+  margin-bottom:18px;
+  display:inline-block;
+  animation:iconFloat 3s ease-in-out infinite;
+}
+
+@keyframes iconFloat{
+  0%,100%{
+    transform:translateY(0);
+  }
+  50%{
+    transform:translateY(-7px);
+  }
+}
+
+.card h3{
+  margin-bottom:12px;
+}
+
+.card p{
+  color:#aab2c5;
+  line-height:1.6;
+  font-size:14px;
+}
+
+/* ================= PORTFOLIO ================= */
+
+.portfolio{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+}
+
+.project{
+  min-height:210px;
+  border-radius:20px;
+  padding:25px;
+
+  display:flex;
+  flex-direction:column;
+  justify-content:end;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(124,58,237,.35),
+      rgba(6,182,212,.12)
+    ),
+    #111827;
+
+  border:1px solid rgba(255,255,255,.1);
+
+  opacity:0;
+  transform:translateY(45px) scale(.96);
+
+  transition:.5s;
+}
+
+.project.show{
+  opacity:1;
+  transform:translateY(0) scale(1);
+}
+
+.project:hover{
+  transform:scale(1.04) translateY(-8px);
+  border-color:#22d3ee;
+  box-shadow:0 20px 45px rgba(0,0,0,.3);
+}
+
+.project h3{
+  margin-bottom:7px;
+}
+
+.project p{
+  color:#aeb7c9;
+  font-size:14px;
+}
+
+/* ================= SKILLS ================= */
+
+.skills{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:15px;
+}
+
+.skill{
+  padding:20px;
+  text-align:center;
+  border-radius:15px;
+  background:rgba(255,255,255,.05);
+  border:1px solid rgba(255,255,255,.08);
+  transition:.4s;
+
+  opacity:0;
+  transform:translateY(30px);
+}
+
+.skill.show{
+  opacity:1;
+  transform:translateY(0);
+}
+
+.skill:hover{
+  transform:translateY(-8px) scale(1.04);
+  border-color:#8b5cf6;
+  box-shadow:0 10px 30px rgba(124,58,237,.2);
+}
+
+/* ================= CONTACT ================= */
+
+.contact-box{
+  max-width:700px;
+  margin:auto;
+  display:grid;
+  gap:15px;
+}
+
+.contact-item{
+  display:flex;
+  align-items:center;
+  gap:18px;
+  padding:20px;
+  border-radius:16px;
+  background:rgba(255,255,255,.05);
+  border:1px solid rgba(255,255,255,.08);
+
+  opacity:0;
+  transform:translateX(-40px);
+
+  transition:.5s;
+}
+
+.contact-item.show{
+  opacity:1;
+  transform:translateX(0);
+}
+
+.contact-item:hover{
+  transform:translateX(8px);
+  border-color:#22d3ee;
+  box-shadow:0 10px 30px rgba(34,211,238,.08);
+}
+
+.contact-icon{
+  font-size:25px;
+  min-width:35px;
+  text-align:center;
+  transition:.3s;
+}
+
+.contact-item:hover .contact-icon{
+  transform:scale(1.25) rotate(5deg);
+}
+
+.contact-item span{
+  color:#9ca8bd;
+  font-size:13px;
+  display:block;
+  margin-bottom:4px;
+}
+
+.contact-item a{
+  color:white;
+  text-decoration:none;
+}
+
+/* ================= ABOUT - LAST ================= */
+
+#about{
+  min-height:70vh;
+}
+
+.about-box{
+  max-width:850px;
+  margin:auto;
+  text-align:center;
+  padding:45px;
+  border-radius:25px;
+
+  background:rgba(255,255,255,.045);
+  border:1px solid rgba(255,255,255,.09);
+
+  opacity:0;
+  transform:translateY(50px);
+  transition:1s;
+}
+
+.about-box.show{
+  opacity:1;
+  transform:translateY(0);
+}
+
+.about-box:hover{
+  border-color:#22d3ee;
+  box-shadow:0 15px 50px rgba(0,0,0,.25);
+}
+
+.about-box p{
+  color:#b8c0d0;
+  line-height:1.8;
+  margin-bottom:18px;
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+  text-align:center;
+  padding:30px;
+  color:#8993a8;
+  border-top:1px solid rgba(255,255,255,.08);
+  font-size:13px;
+}
+
+/* ================= GENERAL ANIMATION ================= */
+
+@keyframes fadeUp{
+  from{
+    opacity:0;
+    transform:translateY(30px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:800px){
+
+  nav{
+    padding:15px 5%;
+  }
+
+  nav ul{
+    gap:12px;
+  }
+
+  nav a{
+    font-size:11px;
+  }
+
+  section{
+    padding-left:5%;
+    padding-right:5%;
+  }
+
+  .cards,
+  .portfolio{
+    grid-template-columns:1fr;
+  }
+
+  .skills{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .section-title{
+    font-size:30px;
+  }
+
+  .about-box{
+    padding:30px 20px;
+  }
+}
+
+@media(max-width:500px){
+
+  nav{
+    flex-direction:column;
+    gap:10px;
+  }
+
+  nav ul{
+    flex-wrap:wrap;
+    justify-content:center;
+  }
+
+  #home{
+    padding-top:160px;
+  }
+
+  .animated-name{
+    font-size:48px;
+  }
+
+  .freelance-tag{
+    font-size:12px;
+  }
+
+  .hero h2{
+    font-size:19px;
+  }
+
+  .hero p{
+    font-size:14px;
+  }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+
+<nav>
+
+  <div class="logo">NEXORA</div>
+
+  <ul>
+    <li><a href="#home">Home</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#portfolio">Portfolio</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#about">About</a></li>
+  </ul>
+
+</nav>
+
+
+<!-- ================= HOME ================= -->
+
+<section id="home">
+
+  <div class="container hero">
+
+    <div class="freelance-tag">
+      ✦ Freelancing by Thabira Chandra
+    </div>
+
+    <h1 class="animated-name">
+      Thabira Chandra
+    </h1>
+
+    <h2>
+      Creative Freelancer & Digital Creator
+    </h2>
+
+    <p>
+      I create modern digital solutions for creators,
+      students, businesses and brands — including video editing,
+      websites, social media content, Excel, Tally and more.
+    </p>
+
+    <div class="buttons">
+
+      <a href="#portfolio" class="btn primary">
+        View Portfolio
+      </a>
+
+      <a href="#contact" class="btn secondary">
+        Contact Me
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ================= SERVICES ================= -->
+
+<section id="services">
+
+  <div class="container">
+
+    <h2 class="section-title">
+      My <span>Services</span>
+    </h2>
+
+    <div class="cards">
+
+      <div class="card reveal">
+        <div class="icon">🎬</div>
+        <h3>Video Editing</h3>
+        <p>
+          YouTube videos, Shorts, Reels, cinematic edits,
+          transitions and engaging social media content.
+        </p>
+      </div>
+
+      <div class="card reveal">
+        <div class="icon">💻</div>
+        <h3>Web Design</h3>
+        <p>
+          Modern responsive websites and portfolio pages
+          for creators, students and small businesses.
+        </p>
+      </div>
+
+      <div class="card reveal">
+        <div class="icon">📱</div>
+        <h3>Social Media</h3>
+        <p>
+          Content ideas, post design, short-form content
+          and social media growth support.
+        </p>
+      </div>
+
+      <div class="card reveal">
+        <div class="icon">📊</div>
+        <h3>Excel</h3>
+        <p>
+          Spreadsheet formatting, data organization,
+          basic dashboards and Excel-related tasks.
+        </p>
+      </div>
+
+      <div class="card reveal">
+        <div class="icon">🧾</div>
+        <h3>Tally</h3>
+        <p>
+          Basic accounting data entry, reports,
+          invoices and Tally-related assistance.
+        </p>
+      </div>
+
+      <div class="card reveal">
+        <div class="icon">🚀</div>
+        <h3>Freelancing</h3>
+        <p>
+          Digital services designed for creators,
+          startups and businesses.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ================= PORTFOLIO ================= -->
+
+<section id="portfolio">
+
+  <div class="container">
+
+    <h2 class="section-title">
+      My <span>Portfolio</span>
+    </h2>
+
+    <div class="portfolio">
+
+      <div class="project reveal">
+        <h3>🎥 Video Editing</h3>
+        <p>
+          Short-form & YouTube video projects
+        </p>
+      </div>
+
+      <div class="project reveal">
+        <h3>🌐 Website Design</h3>
+        <p>
+          Responsive modern portfolio websites
+        </p>
+      </div>
+
+      <div class="project reveal">
+        <h3>📱 Social Media</h3>
+        <p>
+          Creative content and social media projects
+        </p>
+      </div>
+
+      <div class="project reveal">
+        <h3>📊 Excel Projects</h3>
+        <p>
+          Data organization and spreadsheet work
+        </p>
+      </div>
+
+      <div class="project reveal">
+        <h3>🧾 Tally Projects</h3>
+        <p>
+          Accounting and business data work
+        </p>
+      </div>
+
+      <div class="project reveal">
+        <h3>💼 Freelance Work</h3>
+        <p>
+          Digital projects for clients
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ================= SKILLS ================= -->
+
+<section id="skills">
+
+  <div class="container">
+
+    <h2 class="section-title">
+      My <span>Skills</span>
+    </h2>
+
+    <div class="skills">
+
+      <div class="skill reveal">🎬 Video Editing</div>
+      <div class="skill reveal">💻 Web Design</div>
+      <div class="skill reveal">📊 Excel</div>
+      <div class="skill reveal">🧾 Tally</div>
+      <div class="skill reveal">📱 Social Media</div>
+      <div class="skill reveal">🎨 Graphic Design</div>
+      <div class="skill reveal">💼 Freelancing</div>
+      <div class="skill reveal">⚡ Basic Coding</div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ================= CONTACT ================= -->
+
+<section id="contact">
+
+  <div class="container">
+
+    <h2 class="section-title">
+      <span>Contact</span> Me
+    </h2>
+
+    <div class="contact-box">
+
+      <!-- YouTube -->
+
+      <div class="contact-item reveal">
+
+        <div class="contact-icon">▶️</div>
+
+        <div>
+          <span>YouTube</span>
+
+          <a href="#" target="_blank">
+            Visit YouTube Channel
+          </a>
+        </div>
+
+      </div>
+
+
+      <!-- WhatsApp -->
+
+      <div class="contact-item reveal">
+
+        <div class="contact-icon">💬</div>
+
+        <div>
+          <span>WhatsApp</span>
+
+          <a href="https://wa.me/911234567890"
+             target="_blank">
+            Chat on WhatsApp
+          </a>
+        </div>
+
+      </div>
+
+
+      <!-- Email -->
+
+      <div class="contact-item reveal">
+
+        <div class="contact-icon">✉️</div>
+
+        <div>
+          <span>Email</span>
+
+          <a href="mailto:yourmail@example.com">
+            yourmail@example.com
+          </a>
+        </div>
+
+      </div>
+
+
+      <!-- Mobile -->
+
+      <div class="contact-item reveal">
+
+        <div class="contact-icon">📞</div>
+
+        <div>
+          <span>Mobile Number</span>
+
+          <a href="tel:+911234567890">
+            1234567890
+          </a>
+        </div>
+
+      </div>
+
+
+      <!-- Address -->
+
+      <div class="contact-item reveal">
+
+        <div class="contact-icon">📍</div>
+
+        <div>
+          <span>Address</span>
+
+          <a href="#">
+            Nuapada, Odisha, India
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ================= ABOUT - LAST ================= -->
+
+<section id="about">
+
+  <div class="container">
+
+    <h2 class="section-title">
+      About <span>Nexora</span>
+    </h2>
+
+    <div class="about-box reveal">
+
+      <p>
+        Nexora is a creative digital portfolio focused on
+        modern digital services, technology, content creation
+        and freelancing.
+      </p>
+
+      <p>
+        The goal is simple — create useful, modern and
+        professional digital solutions for creators,
+        students, businesses and brands.
+      </p>
+
+      <p>
+        Keep learning. Keep creating. Keep moving forward.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+  © 2026 Nexora. All Rights Reserved.
+</footer>
+
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<script>
+
+const revealElements =
+document.querySelectorAll(".reveal");
+
+const observer =
+new IntersectionObserver(
+  (entries) => {
+
+    entries.forEach((entry) => {
+
+      if(entry.isIntersecting){
+
+        entry.target.classList.add("show");
+
+      }
+
+    });
+
+  },
+  {
+    threshold:0.12
+  }
+);
+
+revealElements.forEach((element,index) => {
+
+  element.style.transitionDelay =
+    (index % 6) * 0.08 + "s";
+
+  observer.observe(element);
+
+});
+
+</script>
+
+</body>
+  </html>
